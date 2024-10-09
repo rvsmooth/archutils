@@ -48,6 +48,6 @@ ewhite() {
 }
 
 donemsg() {
-  egreen Done...
+  sleep 1 && egreen Done...
 }
 
