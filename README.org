@@ -1,4 +1,7 @@
 #+title: My scripts repository
 #+author: RVSmooth
 
-This is a WIP repository(altho all scripts are functions), for installation of my dotfiles, which soon will be public.
+This is a WIP repository(altho all scripts are functional), for installation of my dotfiles, which soon will be public.
+
+
+*These are intended to be used in Arch Linux or its derivatives.
