@@ -1,0 +1,4 @@
+#+title: My scripts repository
+#+author: RVSmooth
+
+This is a WIP repository(altho all scripts are functions), for installation of my dotfiles, which soon will be public.
