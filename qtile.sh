@@ -4,7 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source $SCRIPT_DIR/colors.sh
 
-emagenta Installing QTile & its dependencies...
+emagenta Installing QTile and its dependencies...
 $SPS qtile qtile-extras python-psutil
 donemsg
 
