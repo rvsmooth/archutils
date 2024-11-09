@@ -30,3 +30,7 @@ Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
   donemsg
 fi
 
+emagenta Enabling SDDM
+sudo systemctl enable sddm
+donemsg
+
