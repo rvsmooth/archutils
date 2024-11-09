@@ -21,7 +21,7 @@ else
    sleep 1
    emagenta beginning installation of paru...
    bash $SCRIPT_DIR/chaotic.sh
-   $SPS paru
+   sudo pacman -Syyu --noconfirm --needed paru yay
    donemsg
 fi
 
