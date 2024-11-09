@@ -42,7 +42,7 @@ sleep 2
 
 # Create bookmarks
 eblue Setting Up Bookmarks of Filemanager
-mkdir ~/Library ~/Downloads ~/Media ~/Music ~/Pictures ~/Work
+mkdir -p ~/Library ~/Downloads ~/Media ~/Music ~/Pictures/wallpapers ~/Work ~/Projects
 touch "$GTK3_DIR"/bookmarks
 echo "
 file:///home/$(whoami)/Library
@@ -50,6 +50,7 @@ file:///home/$(whoami)/Downloads
 file:///home/$(whoami)/Media
 file:///home/$(whoami)/Music
 file:///home/$(whoami)/Pictures
+file:///home/$(whoami)/Projects
 file:///home/$(whoami)/Work" | tee "$GTK3_DIR/bookmarks"
 donemsg
 
