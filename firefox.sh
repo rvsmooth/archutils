@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FF_PATH="${HOME}/.mozilla"
 FF_INI_PATH="${FF_PATH}/firefox/profiles.ini"
 JS_PATH="/tmp/user.js"
-
+PROFILE_NAME="$(whoami)"
 # Source colors
 source $SCRIPT_DIR/colors.sh
 
@@ -48,11 +48,14 @@ ecyan Getting Profiles
 get_profiles
 
 if [ -z "$PROFILES" ]; then
-  eyellow No profiles found. Creating a new profile named as $(whoami)
-  firefox -CreateProfile $(whoami)
+  eyellow No profiles found. Creating a new profile named as $PROFILE_NAME
+  firefox -CreateProfile $PROFILE_NAME
   install_js
 else
   ecyan Pre-existing profile found, updating user.js
   install_js
 fi
 
+firefox -P $PROFILE_NAME &
+sleep 2 
+killall firefox
