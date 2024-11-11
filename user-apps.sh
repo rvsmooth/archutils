@@ -8,7 +8,7 @@ emagenta Installing User Applications......
 $SPS librewolf-bin qutebrowser neovim freetube-bin gimp thunderbird obs-studio \
   mpv onlyoffice-bin localsend-bin qbittorrent btop calibre qemu virt-manager \
   virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode eptables \
-  iptables kiwix-desktop musikcube
+  iptables kiwix-desktop musikcube newsboat
 
 donemsg
 

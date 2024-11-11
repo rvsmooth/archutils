@@ -6,7 +6,7 @@ source $SCRIPT_DIR/colors.sh
 
 emagenta Installing themeing packages and utils
 $SPS nwg-look bibata-cursor-theme-bin gruvbox-material-gtk-theme-git gruvbox-material-icon-theme-git \
-  ttf-jetbrains-mono-nerd ttf-ubuntu-font-family font-manager
+  ttf-jetbrains-mono-nerd ttf-ubuntu-font-family font-manager papirus-icon-theme
 
 wget -O /tmp/Dracula.tar.xz https://github.com/dracula/gtk/releases/latest/download/Dracula.tar.xz &&
 	mkdir /tmp/Dracula &&
