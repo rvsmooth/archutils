@@ -27,3 +27,7 @@ eblue setting up wallpapers
 mkdir -p ~/Pictures/wallpapers
 git clone https://github.com/rvsmooth/wallpapers ~/Pictures/wallpapers
 donemsg
+
+eblue I really really love candy, do you not?
+sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
+donemsg
