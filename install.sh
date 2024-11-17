@@ -31,4 +31,5 @@ source $SCRIPT_DIR/sddm.sh
 source $SCRIPT_DIR/themeing.sh
 source $SCRIPT_DIR/user-apps.sh
 source $SCRIPT_DIR/utilities.sh
+source $SCRIPT_DIR/dots.sh
 
