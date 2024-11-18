@@ -15,14 +15,14 @@ EOF
 echo -e "${RESET}"
 
  if pacman -Qi paru &> /dev/null; then
-  eyellow paru is installed
+  PYELL paru is installed
 else
-   ered paru is not installed
+   PRED paru is not installed
    sleep 1
-   emagenta beginning installation of paru...
+   PMAG beginning installation of paru...
    bash $SCRIPT_DIR/chaotic.sh
    sudo pacman -S --noconfirm --needed paru yay wget aria2
-   donemsg
+   PDONE
 fi
 
 source $SCRIPT_DIR/chaotic.sh

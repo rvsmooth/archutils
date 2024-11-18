@@ -15,11 +15,11 @@ function config() {
     $git_cmd --git-dir="$git_dir" --work-tree="$work_tree" "$@" 
   }
 
-emagenta  Setting up git configs
+PMAG  Setting up git configs
 git config --global user.name "RVSmooth"
 git config --global user.email "riveeks.smooth@gmail.com"
 git config --global core.editor "nvim"
-donemsg
+PDONE
 
 
 # Check if the directory exists

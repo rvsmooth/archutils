@@ -20,13 +20,13 @@ Include = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf
 }
 
 if [[ -f /etc/pacman.d/chaotic-mirrorlist ]]; then
-  eyellow Chaotic-aur is already installed.
+  PYELL Chaotic-aur is already installed.
 else
   install_chaotic
-  egreen chaotic-aur is installed successfully
-  eblue updating repos
+  PGREEN chaotic-aur is installed successfully
+  PBLUE updating repos
   sudo pacman -Syy
-  donemsg
+  PDONE
 fi
 
 

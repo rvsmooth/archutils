@@ -15,31 +15,31 @@ CYAN='\033[0;36m'
 WHITE='\033[0;37m'
 
 # Color Functions
-eblack() {
+PBLACK() {
     echo -e "${BLACK}$@${RESET}"
 }
 
-ered() {
+PRED() {
     echo -e "${RED}$@${RESET}"
 }
 
-egreen() {
+PGREEN() {
     echo -e "${GREEN}$@${RESET}"
 }
 
-eyellow() {
+PYELL() {
     echo -e "${YELLOW}$@${RESET}"
 }
 
-eblue() {
+PBLUE() {
     echo -e "${BLUE}$@${RESET}"
 }
 
-emagenta() {
+PMAG() {
     echo -e "${MAGENTA}$@${RESET}"
 }
 
-ecyan() {
+PCYAN() {
     echo -e "${CYAN}$@${RESET}"
 }
 
@@ -47,7 +47,7 @@ ewhite() {
     echo -e "${WHITE}$@${RESET}"
 }
 
-donemsg() {
-  sleep 1 && egreen Done...
+PDONE() {
+  sleep 1 && PGREEN Done...
 }
 

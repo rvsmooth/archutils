@@ -7,17 +7,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source $SCRIPT_DIR/colors.sh
 
-emagenta Installing Utilities......
+PMAG Installing Utilities......
 $SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
   bluez bluez-libs bluez-utils alsa-utils wireplumber imagemagick wget lxsession feh expac \
   reflector plocate redshift flatpak ddcutil starship fish zsh zip unzip usbutils android-tools \
   xclip kitty dunst picom rsync aria2 less qemu-full fastfetch
-donemsg
+PDONE
 
 sleep 2
 
 # setup flameshot
-eblue Setting Up Flameshot......
+PBLUE Setting Up Flameshot......
 mkdir "$FLAMESHOT_DIR"
 mkdir -p ~/Pictures/screenshots
 touch "$FLAMESHOT_INI_DIR"
@@ -29,19 +29,19 @@ echo "[General]
 
   [Shortcuts]
   TYPE_SAVE=Return" | tee "$FLAMESHOT_INI_DIR"
-donemsg
+PDONE
 
 sleep 2
 
 # setup bluetooth
-eblue Setting Up Bluetooth......
+PBLUE Setting Up Bluetooth......
 sudo systemctl enable bluetooth --now
-donemsg
+PDONE
 
 sleep 2
 
 # Create bookmarks
-eblue Setting Up Bookmarks of Filemanager
+PBLUE Setting Up Bookmarks of Filemanager
 mkdir -p ~/Library ~/Downloads ~/Media ~/Music ~/Pictures/wallpapers ~/Work ~/Projects
 touch "$GTK3_DIR"/bookmarks
 echo "
@@ -52,9 +52,9 @@ file:///home/$(whoami)/Music
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Projects
 file:///home/$(whoami)/Work" | tee "$GTK3_DIR/bookmarks"
-donemsg
+PDONE
 
 # change user shell
-eblue Changing User shell to fish......
+PBLUE Changing User shell to fish......
 sudo chsh $USER -s /usr/bin/fish
-donemsg
+PDONE

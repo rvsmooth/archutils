@@ -5,7 +5,7 @@ THEME_LIST=$(sudo find /usr/share/themes -type f -name "index.theme")
 GTK3_DIR="${HOME}/.config/gtk-3.0"
 source $SCRIPT_DIR/colors.sh
 
-emagenta Installing themeing packages and utils
+PMAG Installing themeing packages and utils
 $SPS nwg-look bibata-cursor-theme-bin gruvbox-material-gtk-theme-git gruvbox-material-icon-theme-git \
   ttf-jetbrains-mono-nerd ttf-ubuntu-font-family font-manager papirus-icon-theme ttf-roboto wget \
   curl unzip zip 
@@ -19,9 +19,9 @@ wget -O /tmp/Catppuccin.zip https://github.com/catppuccin/gtk/releases/download/
 	mkdir /tmp/Catppuccin &&
 	unzip /tmp/Catppuccin.zip -d /tmp/Catppuccin &&
 	sudo cp -r /tmp/Catppuccin/* /usr/share/themes
-donemsg
+PDONE
 
-eblue Setting up gtk theme, cursor theme and font...
+PBLUE Setting up gtk theme, cursor theme and font...
 mkdir "$GTK3_DIR"
 cp "$SCRIPT_DIR"/assets/settings.ini "$GTK3_DIR"/settings.ini
 
@@ -37,13 +37,13 @@ done
 
 #change def cursor theme in root
 sudo sed -i 's/Adwaita/Bibata-Modern-Ice/g' /usr/share/icons/default/index.theme
-donemsg
+PDONE
 
-eblue setting up wallpapers
+PBLUE setting up wallpapers
 mkdir -p ~/Pictures/wallpapers
 git clone https://github.com/rvsmooth/wallpapers ~/Pictures/wallpapers
-donemsg
+PDONE
 
-eblue I really really love candy, do you not?
+PBLUE I really really love candy, do you not?
 sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
-donemsg
+PDONE
