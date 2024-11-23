@@ -35,8 +35,14 @@ function get_js() {
 	PCYAN Grabbing betterfox user.js ....
 	sleep 1
 	wget -O $JS_PATH https://raw.githubusercontent.com/yokoffing/Betterfox/refs/heads/main/user.js &&
-		PDONE
-	sleep 2
+			echo 'user_pref("image.avif.use-dav1d", false);
+			user_pref("media.ffmpeg.vaapi.enabled", true);
+			user_pref("media.av1.enabled", false);
+			user_pref("media.mediasource.vp9.enabled", false);
+			user_pref("media.peerconnection.video.vp9_enabled", false);
+			user_pref("gfx.webrender.all", true);' | tee -a $JS_PATH
+			PDONE
+			sleep 2
 }
 
 function wfox() {
