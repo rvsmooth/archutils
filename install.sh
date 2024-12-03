@@ -33,4 +33,4 @@ source "$INSTALL_DIR"/icandy/themeing.sh
 source "$INSTALL_DIR"/packages/user-apps.sh
 source "$INSTALL_DIR"/packages/utilities.sh
 
-echo $INSTALL_DIR
+PGREEN Installation is Done.'\n'A reboot is recommended before proceeding to use the system.
