@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PMAG Installing User Applications......
-$SPS brave-bin floor-bin neovim gimp thunderbird obs-studio \
+$SPS brave-bin floorp-bin neovim gimp thunderbird obs-studio \
   mpv onlyoffice-bin localsend-bin qbittorrent btop calibre kiwix-desktop musikcube newsboat
 
 PDONE
