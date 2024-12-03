@@ -12,12 +12,3 @@ PDONE
 
 sleep 2
 
-## virt-manager setup
-PBLUE Setting up virt-manager
-sudo systemctl enable libvirtd.service --now
-sleep 1
-systemctl status libvirtd.service
-sudo usermod -a -G libvirt $(whoami)
-sudo usermod -a -G kvm $(whoami)
-sudo systemctl restart libvirtd.service
-PDONE

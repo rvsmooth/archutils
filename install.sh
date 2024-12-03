@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$SCRIPT_DIR"/icandy/colors.sh
+source "$INSTALL_DIR"/icandy/colors.sh
 
 echo -e "${RED}"
 cat <<"EOF"
@@ -20,15 +20,17 @@ else
    PRED paru is not installed
    sleep 1
    PMAG beginning installation of paru...
-   bash "$SCRIPT_DIR"/chaotic.sh
+   bash "$INSTALL_DIR"/base/chaotic.sh
    sudo pacman -S --noconfirm --needed paru yay wget aria2
    PDONE
 fi
 
-source "$SCRIPT_DIR"/base/chaotic.sh
-source "$SCRIPT_DIR"/base/dots.sh
-source "$SCRIPT_DIR"/packages/twms.sh
-source "$SCRIPT_DIR"/packagessddm.sh
-source "$SCRIPT_DIR"/icandy/themeing.sh
-source "$SCRIPT_DIR"/packages/user-apps.sh
-source "$SCRIPT_DIR"/packages/utilities.sh
+source "$INSTALL_DIR"/base/chaotic.sh
+source "$INSTALL_DIR"/base/dots.sh
+source "$INSTALL_DIR"/packages/twms.sh
+source "$INSTALL_DIR"/packages/sddm.sh
+source "$INSTALL_DIR"/icandy/themeing.sh
+source "$INSTALL_DIR"/packages/user-apps.sh
+source "$INSTALL_DIR"/packages/utilities.sh
+
+echo $INSTALL_DIR
