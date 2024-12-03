@@ -4,7 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SPAKU='sudo pacman -U --noconfirm'
 SPAKK='sudo pacman-key'
 
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 
 function install_chaotic(){

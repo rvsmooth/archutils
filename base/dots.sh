@@ -11,7 +11,7 @@ CONFIGS_BAK="${HOME}/.config-bak"
 LOCAL_DOTS_VINT=$(echo $LOCAL_DOTS_VERSION | tr -d '.')
 UPSTREAM_VINT=$(echo $UPSTREAM_VERSION | tr -d '.')
 
-source $SCRIPT_DIR/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 function prepare_env(){
 	PYELL Backing up old config files into $CONFIGS_BAK

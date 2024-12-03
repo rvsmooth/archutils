@@ -11,7 +11,7 @@ function get_profs() {
 }
 
 # Source colors
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 # functions
 function install_js() {

@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BARE_REPO_DIR="$HOME/.dotfiles"
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 function config() {
     git_cmd='/usr/bin/git'

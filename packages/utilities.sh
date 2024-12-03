@@ -5,13 +5,13 @@ FLAMESHOT_INI_DIR="${FLAMESHOT_DIR}/flameshot.ini"
 GTK3_DIR="${HOME}/.config/gtk-3.0"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PMAG Installing Utilities......
 $SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
   bluez bluez-libs bluez-utils alsa-utils wireplumber imagemagick wget lxsession feh expac \
   reflector plocate redshift flatpak ddcutil starship fish zsh zip unzip usbutils android-tools \
-  xclip kitty dunst picom rsync aria2 less qemu-full fastfetch
+  xclip kitty dunst picom rsync aria2 less fastfetch
 PDONE
 
 sleep 2

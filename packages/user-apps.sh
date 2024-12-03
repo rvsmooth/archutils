@@ -2,13 +2,11 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PMAG Installing User Applications......
-$SPS brave-bin firefox neovim freetube-bin gimp thunderbird obs-studio \
-  mpv onlyoffice-bin localsend-bin qbittorrent btop calibre qemu virt-manager \
-  virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode eptables \
-  iptables kiwix-desktop musikcube newsboat
+$SPS brave-bin floor-bin neovim gimp thunderbird obs-studio \
+  mpv onlyoffice-bin localsend-bin qbittorrent btop calibre kiwix-desktop musikcube newsboat
 
 PDONE
 

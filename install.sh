@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$SCRIPT_DIR"/colors.sh
+source "$SCRIPT_DIR"/icandy/colors.sh
 
 echo -e "${RED}"
 cat <<"EOF"
@@ -25,11 +25,10 @@ else
    PDONE
 fi
 
-source "$SCRIPT_DIR"/chaotic.sh
-source "$SCRIPT_DIR"/twms.sh
-source "$SCRIPT_DIR"/sddm.sh
-source "$SCRIPT_DIR"/themeing.sh
-source "$SCRIPT_DIR"/user-apps.sh
-source "$SCRIPT_DIR"/utilities.sh
-source "$SCRIPT_DIR"/dots.sh
-
+source "$SCRIPT_DIR"/base/chaotic.sh
+source "$SCRIPT_DIR"/base/dots.sh
+source "$SCRIPT_DIR"/packages/twms.sh
+source "$SCRIPT_DIR"/packagessddm.sh
+source "$SCRIPT_DIR"/icandy/themeing.sh
+source "$SCRIPT_DIR"/packages/user-apps.sh
+source "$SCRIPT_DIR"/packages/utilities.sh
