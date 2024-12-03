@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Some common vars
-SPS='paru -S --noconfirm --needed --notimeout --disable-download-timeout --color always'
+SPS='paru -S --noconfirm --needed --disable-download-timeout --color always'
 
 # Color Codes
 RESET='\033[0m'
