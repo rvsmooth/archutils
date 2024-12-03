@@ -3,7 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 THEME_LIST=$(sudo find /usr/share/themes -type f -name "index.theme")
 GTK3_DIR="${HOME}/.config/gtk-3.0"
-source $SCRIPT_DIR/colors.sh
+source "$SCRIPT_DIR"/colors.sh
 
 PMAG Installing themeing packages and utils
 $SPS nwg-look bibata-cursor-theme-bin gruvbox-material-gtk-theme-git gruvbox-material-icon-theme-git \
@@ -27,11 +27,11 @@ cp "$SCRIPT_DIR"/assets/settings.ini "$GTK3_DIR"/settings.ini
 
 ### A loop to change cursor theme in all existing themes
 for THEMES in $THEME_LIST; do
-	echo $THEMES
+	echo "$THEMES"
 sudo sed -i -e '/^CursorTheme=/d' \
            -e '/^\[X-GNOME-Metatheme\]/a CursorTheme=Bibata-Modern-Ice' \
 	   "$THEMES"
-cat $THEMES
+cat "$THEMES"
 echo
 done
 

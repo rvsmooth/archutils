@@ -7,24 +7,24 @@ PROFILE_NAME="$(whoami)"
 
 function get_profs() {
 
-	PROFILES="$(cat ${INI_PATH} | awk -F '=' '/Path/ {print $2}' | tr -d ' ')"
+	PROFILES="$(cat "${INI_PATH}" | awk -F '=' '/Path/ {print $2}' | tr -d ' ')"
 }
 
 # Source colors
-source $SCRIPT_DIR/colors.sh
+source "$SCRIPT_DIR"/colors.sh
 
 # functions
 function install_js() {
 	get_profs
 	for profile in $PROFILES; do
 		prof_path="${BROWSER_PATH}/$profile"
-		PCYAN Installing Betterfox for $prof_path
+		PCYAN Installing Betterfox for "$prof_path"
 
 		if [ -d "$prof_path" ]; then
-			cp -f $JS_PATH $prof_path
-			rm -rf $prof_path/prefs.js
+			cp -f $JS_PATH "$prof_path"
+			rm -rf "$prof_path"/prefs.js
 		else
-			PRED Directory does not exist: $prof_path
+			PRED Directory does not exist: "$prof_path"
 		fi
 		PDONE
 	done
@@ -61,8 +61,8 @@ function installer() {
 
 	get_profs
 	if [ -z "$PROFILES" ]; then
-		PYELL No profiles found. Creating a new profile named as $PROFILE_NAME
-		$BROWSER -CreateProfile $PROFILE_NAME
+		PYELL No profiles found. Creating a new profile named as "$PROFILE_NAME"
+		$BROWSER -CreateProfile "$PROFILE_NAME"
 		install_js
 	else
 		PCYAN Pre-existing profile found, updating user.js
@@ -81,7 +81,7 @@ fi
 
 function lunch_browser_once() {
 
-	$BROWSER -P $PROFILE_NAME &
+	$BROWSER -P "$PROFILE_NAME" &
 }
 
 usage() {

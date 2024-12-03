@@ -5,7 +5,7 @@ FLAMESHOT_INI_DIR="${FLAMESHOT_DIR}/flameshot.ini"
 GTK3_DIR="${HOME}/.config/gtk-3.0"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source $SCRIPT_DIR/colors.sh
+source "$SCRIPT_DIR"/colors.sh
 
 PMAG Installing Utilities......
 $SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
@@ -56,5 +56,5 @@ PDONE
 
 # change user shell
 PBLUE Changing User shell to fish......
-sudo chsh $USER -s /usr/bin/fish
+sudo chsh "$USER" -s /usr/bin/fish
 PDONE

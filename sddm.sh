@@ -4,7 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SDDM_CLONE_DIR='/tmp/simplicity'
 SDDM_THEME_DIR='/usr/share/sddm/themes/simplicity/'
 
-source $SCRIPT_DIR/colors.sh
+source "$SCRIPT_DIR"/colors.sh
 
 if [[ -d "$SDDM_THEME_DIR" ]]; then
 
