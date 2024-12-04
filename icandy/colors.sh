@@ -48,6 +48,6 @@ ewhite() {
 }
 
 PDONE() {
-  sleep 1 && PGREEN Done...
+  sleep 1 && PGREEN Done... && sleep 1
 }
 
