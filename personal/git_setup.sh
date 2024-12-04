@@ -32,5 +32,3 @@ if [ -d "$BARE_REPO_DIR" ]; then
 else
     echo "$BARE_REPO_DIR doesn't exist. \n First set up your bare git repo then run this script again"
 fi
-
-$SPS libva libva-intel-driver libva-utils
