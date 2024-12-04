@@ -6,13 +6,10 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 PMAG Installing Utilities......
 $SPS qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode eptables \
 	iptables qemu-full
-
 PDONE
 
-sleep 2
-
 ## virt-manager setup
-PBLUE Setting up virt-manager
+PGREEN Setting up virt-manager
 sudo systemctl enable libvirtd.service --now
 sleep 1
 systemctl status libvirtd.service
