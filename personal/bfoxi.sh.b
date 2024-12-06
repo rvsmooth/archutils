@@ -4,6 +4,14 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 JS_PATH="/tmp/user.js"
 PROFILE_NAME="$(whoami)"
+PREFS='
+user_pref("image.avif.use-dav1d", false);
+user_pref("media.ffmpeg.vaapi.enabled", true);
+user_pref("media.av1.enabled", false);
+user_pref("media.mediasource.vp9.enabled", false);
+user_pref("media.peerconnection.video.vp9_enabled", false);
+user_pref("gfx.webrender.all", true);
+'
 function get_profs() {
 
 	PROFILES="$(cat "${INI_PATH}" | awk -F '=' '/Path/ {print $2}' | tr -d ' ')"
@@ -35,9 +43,12 @@ function get_js() {
 	PCYAN Grabbing betterfox user.js ....
 	sleep 1
 	wget -O "$JS_PATH" https://raw.githubusercontent.com/yokoffing/Betterfox/refs/heads/main/user.js &&
-		cat ${SCRIPT_DIR}/prefs | tee -a "$JS_PATH"
-
-	}
+		cat <<EOF | tee -a "$JS_PATH"
+$PREFS 
+EOF   
+			PDONE
+			sleep 2
+		}
 
 function wfox() {
 	BROWSER="waterfox"
