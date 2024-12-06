@@ -11,7 +11,7 @@ PMAG Installing Utilities......
 $SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
   bluez bluez-libs bluez-utils alsa-utils wireplumber imagemagick wget lxsession feh expac \
   reflector plocate redshift flatpak ddcutil starship fish zsh zip unzip usbutils android-tools \
-  xclip kitty dunst picom rsync aria2 less fastfetch viewnior fortune-mod
+  xclip kitty dunst picom rsync aria2 less fastfetch viewnior fortune-mod timeshift
 PDONE
 
 sleep 2
