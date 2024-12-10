@@ -41,7 +41,7 @@ PDONE
 
 PBLUE setting up wallpapers
 mkdir -p ~/Pictures/wallpapers
-git clone https://github.com/dotsmooth/wallpapers ~/Pictures/wallpapers
+git clone https://github.com/rvsmooth/wallpapers ~/Pictures/wallpapers
 PDONE
 
 PBLUE I really really love candy, do you not?

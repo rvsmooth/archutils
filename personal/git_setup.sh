@@ -24,11 +24,9 @@ PDONE
 
 # Check if the directory exists
 if [ -d "$BARE_REPO_DIR" ]; then
-	config remote add origin git@gitlab.com:dotsmooth/dotfiles.git
-	git remote add github git@github.com:RVSmooth/dotfiles.git
-	config remote set-url --add --push origin git@github.com:RVSmooth/dotfiles.git
-	config remote set-url --add --push origin git@gitlab.com:dotsmooth/dotfiles.git
-	git remote set-url --add --push origin git@gitlab.com:dotsmooth/dotfiles.git
+	config remote add origin git@gitlab.com:rvsmooth/dotfiles.git
+	config remote set-url --add --push origin git@github.com:rvsmooth/dotfiles.git
+	config remote set-url --add --push origin git@gitlab.com:rvsmooth/dotfiles.git
 else
     echo "$BARE_REPO_DIR doesn't exist. \n First set up your bare git repo then run this script again"
 fi
