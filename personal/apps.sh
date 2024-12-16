@@ -8,8 +8,3 @@ PGREEN Installing personal packages
 $SPS libva libva-intel-driver libva-utils emacs cmake
 PDONE
 
-PMAG Installing Flatpaks
-flatpak install -y com.notesnook.Notesnook org.localsend.localsend_app \
-	eu.betterbird.Betterbird one.ablaze.floorp com.brave.Browser \
-	org.onlyoffice.desktopeditors
-PDONE
