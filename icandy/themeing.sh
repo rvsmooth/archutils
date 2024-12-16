@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 THEME_LIST=$(sudo find /usr/share/themes -type f -name "index.theme")
 GTK3_DIR="${HOME}/.config/gtk-3.0"
+FONTS_CLONE_DIR="/tmp/fonts"
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PMAG Installing themeing packages and utils
@@ -46,4 +47,11 @@ PDONE
 
 PBLUE I really really love candy, do you not?
 sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
+PDONE
+
+PYELL Getting fonts
+wget -qO "$FONTS_CLONE_DIR"/fonts.zip https://github.com/rvsmooth/Wallpapers/releases/download/1/fonts-ebook.zip
+unzip -qo "$FONTS_CLONE_DIR"/fonts.zip -d "$FONTS_CLONE_DIR" 
+mkdir -p "$HOME"/.local/share/fonts
+cp -rf "$FONTS_CLONE_DIR"/*.ttf "$HOME"/.local/share/fonts
 PDONE
