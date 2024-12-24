@@ -16,7 +16,6 @@ org.gnome.Logs
 org.gnome.Papers
 org.gnome.World.PikaBackup
 org.mozilla.Thunderbird
-org.mozilla.firefox
 org.gnome.Maps
 "
 INSTALL_LIST="
@@ -25,7 +24,6 @@ com.calibre_ebook.calibre
 org.localsend.localsend_app
 com.notesnook.Notesnook
 eu.betterbird.Betterbird
-one.ablaze.floorp
 org.onlyoffice.desktopeditors
 com.github.neithern.g4music
 org.qbittorrent.qBittorrent
@@ -34,12 +32,12 @@ org.qbittorrent.qBittorrent
 # shells
 PYELL Setting up bash and fish shell...
 mkdir -p "$SCRIPTS_COMMON_DIR"
-curl https://gitlab.com/RVSmooth/dotfiles/-/raw/main/.config/scripts-common/aliases.sh?ref_type=heads > "$SCRIPTS_COMMON_DIR"/aliases.sh 
+curl https://gitlab.com/rvsmooth/dotfiles/-/raw/main/.config/scripts-common/aliases.sh?ref_type=heads > "$SCRIPTS_COMMON_DIR"/aliases.sh 
 # bash
-curl https://gitlab.com/RVSmooth/dotfiles/-/raw/main/.bashrc?ref_type=heads > "$HOME"/.bashrc 
+curl https://gitlab.com/rvsmooth/dotfiles/-/raw/main/.bashrc?ref_type=heads > "$HOME"/.bashrc 
 # fish
 mkdir -p "$FISH_CONFIG_DIR"
-curl https://gitlab.com/RVSmooth/dotfiles/-/raw/main/.config/fish/config.fish?ref_type=heads > "$FISH_CONFIG_DIR"/config.fish  
+curl https://gitlab.com/rvsmooth/dotfiles/-/raw/main/.config/fish/config.fish?ref_type=heads > "$FISH_CONFIG_DIR"/config.fish  
 PYELL Setting up fish as the default shell
 sudo usermod --shell /usr/bin/fish $(whoami)
 PDONE
