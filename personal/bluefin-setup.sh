@@ -27,6 +27,8 @@ eu.betterbird.Betterbird
 org.onlyoffice.desktopeditors
 com.github.neithern.g4music
 org.qbittorrent.qBittorrent
+com.obsproject.Studio
+org.shotcut.Shotcut
 "
 
 # shells
@@ -83,5 +85,5 @@ for flatr in $REMOVE_LIST; do
 	flatpak -y --system remove $flatr
 done
 PYELL Installing GIMP RC 3.0
-flatpak install -y --user https://flathub.org/beta-repo/appstream/org.gimp.GIMP.flatpakref
+flatpak install -y --system https://flathub.org/beta-repo/appstream/org.gimp.GIMP.flatpakref
 PDONE
