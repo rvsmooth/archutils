@@ -50,6 +50,7 @@ sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
 PDONE
 
 PYELL Getting fonts
+mkdir -p "$FONTS_CLONE_DIR"
 wget -qO "$FONTS_CLONE_DIR"/fonts.zip https://github.com/rvsmooth/Wallpapers/releases/download/1/fonts-ebook.zip
 unzip -qo "$FONTS_CLONE_DIR"/fonts.zip -d "$FONTS_CLONE_DIR" 
 mkdir -p "$HOME"/.local/share/fonts
