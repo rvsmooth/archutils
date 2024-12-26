@@ -11,7 +11,7 @@ PMAG Installing Utilities......
 $SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
   bluez bluez-libs bluez-utils alsa-utils wireplumber imagemagick wget lxsession feh expac \
   reflector plocate redshift flatpak ddcutil starship fish zsh zip unzip usbutils android-tools \
-  xclip kitty dunst picom rsync aria2 less fastfetch viewnior fortune-mod timeshift yt-dlp
+  xclip kitty dunst picom rsync aria2 less fastfetch viewnior fortune-mod timeshift yt-dlp cronie
 PDONE
 
 sleep 2
@@ -57,4 +57,9 @@ PDONE
 # change user shell
 PBLUE Changing User shell to fish......
 sudo chsh "$USER" -s /usr/bin/fish
+PDONE
+
+# enable cronie
+PYELL Enabling cronie...
+sudo systemctl enable cronie
 PDONE
