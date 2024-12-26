@@ -51,7 +51,14 @@ PBLUE setting up wallpapers
 git clone https://github.com/rvsmooth/wallpapers "$WALLS_DIR"
 PDONE
 
-PBLUE I really really love candy, do you not?
-sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
+if command -v pacman &> /dev/null
+then
+	PBLUE I really really love candy, do you not?
+	PYELL "Distro is Arch..."
+	sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
+else
+	echo
+fi
+
 PDONE
 
