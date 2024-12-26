@@ -17,8 +17,10 @@ org.gnome.Papers
 org.gnome.World.PikaBackup
 org.mozilla.Thunderbird
 org.gnome.Maps
+org.mozilla.firefox
 "
 INSTALL_LIST="
+one.ablaze.floorp
 com.brave.Browser
 com.calibre_ebook.calibre 
 org.localsend.localsend_app
