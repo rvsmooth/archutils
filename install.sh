@@ -13,18 +13,21 @@ cat <<"EOF"
 
 EOF
 echo -e "${RESET}"
+function package_man_install+(){
 
- if pacman -Qi paru &> /dev/null; then
-  PYELL paru is installed
+if pacman -Qi paru &> /dev/null; then
+	PYELL paru is installed
 else
-   PRED paru is not installed
-   sleep 1
-   PMAG beginning installation of paru...
-   bash "$INSTALL_DIR"/base/chaotic.sh
-   sudo pacman -S --noconfirm --needed paru yay wget aria2
-   PDONE
+	PRED paru is not installed
+	sleep 1
+	PMAG beginning installation of paru...
+	bash "$INSTALL_DIR"/base/chaotic.sh
+	sudo pacman -S --noconfirm --needed paru yay wget aria2
+	PDONE
 fi
+}
 
+source "$INSTALL_DIR"/base/select.sh
 source "$INSTALL_DIR"/base/chaotic.sh
 source "$INSTALL_DIR"/base/dots.sh
 source "$INSTALL_DIR"/packages/twms.sh

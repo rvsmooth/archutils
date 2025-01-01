@@ -7,7 +7,8 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 PMAG Installing User Applications......
 $SPS neovim npm gimp obs-studio \
   mpv qbittorrent btop calibre \
-  kiwix-desktop musikcube newsboat 
+  kiwix-desktop musikcube newsboat \
+  flatpak
 PDONE
 
 
