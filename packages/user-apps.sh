@@ -19,3 +19,6 @@ flatpak install -y com.notesnook.Notesnook org.localsend.localsend_app \
 PDONE
 sleep 2
 
+PYELL Setting floorp as default Browser
+xdg-settings set default-web-browser one.ablaze.floorp.desktop 
+PDONE
