@@ -6,7 +6,8 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 
 if [[ "$QTILE" == 1 ]]; then
 PYELL Installing QTile and its dependencies...
-$SPS qtile qtile-extras python-psutil python-dbus-next python-iwlib
+$SPS qtile qtile-extras python-psutil python-dbus-next python-iwlib picom redshift feh \
+	xclip 
 PDONE
 else 
 	echo
