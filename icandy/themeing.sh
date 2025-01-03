@@ -11,20 +11,28 @@ FONTS_DIR="${HOME}/.fonts"
 WALLS_DIR="${HOME}/Pictures/wallpapers"
 
 source "$SCRIPT_DIR"/../icandy/colors.sh
+PKGS=(
+	"font-manager"
+	"nwg-look"
+	"papirus-icon-theme"
+	"ttf-jetbrains-mono-nerd"
+	"ttf-roboto"
+	"ttf-ubuntu-font-family"
+)
+
+ASSETS=("fonts" "themes" "icons")
+URLS=(
+	"https://github.com/rvsmooth/Wallpapers/releases/download/1/fonts-ebook.zip"
+	"https://github.com/rvsmooth/Wallpapers/releases/download/1/themes.zip"
+	"https://github.com/rvsmooth/Wallpapers/releases/download/1/icons.zip"
+)
 
 PMAG Installing themeing packages and utils
-$SPS nwg-look ttf-jetbrains-mono-nerd ttf-ubuntu-font-family font-manager papirus-icon-theme ttf-roboto wget \
-  curl unzip zip 
+$SPS "${PKGS[@]}"
 
 ## get assets
 mkdir -p "$FONTS_CLONE_DIR" "$ICONS_CLONE_DIR" "$THEMES_CLONE_DIR" "$FONTS_DIR" "$ICONS_DIR" "$THEMES_DIR" "$WALLS_DIR"
 
-ASSETS=("fonts" "themes" "icons")
-URLS=(
-    "https://github.com/rvsmooth/Wallpapers/releases/download/1/fonts-ebook.zip"
-    "https://github.com/rvsmooth/Wallpapers/releases/download/1/themes.zip"
-    "https://github.com/rvsmooth/Wallpapers/releases/download/1/icons.zip"
-)
 
 for i in "${!ASSETS[@]}"; do
     ASSET=${ASSETS[$i]}

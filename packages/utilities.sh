@@ -7,16 +7,51 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
+PKGS=(
+	"alsa-utils"
+	"android-tools"
+	"aria2"
+	"bluez"
+	"bluez-libs"
+	"bluez-utils"
+	"cronie"
+	"ddcutil"
+	"dunst"
+	"engrampa"
+	"expac"
+	"fastfetch"
+	"fish"
+	"fortune-mod"
+	"gvfs"
+	"gvfs-mtp"
+	"imagemagick"
+	"kitty"
+	"less"
+	"lxsession"
+	"mtpfs"
+	"pcmanfm-gtk3"
+	"plocate"
+	"reflector"
+	"rofi"
+	"rsync"
+	"starship"
+	"timeshift"
+	"unzip"
+	"usbutils"
+	"viewnior"
+	"wireplumber"
+	"yt-dlp"
+	"zsh"
+
+)
 PMAG Installing Utilities......
-$SPS flameshot rofi pcmanfm-gtk3 engrampa gvfs gvfs-mtp mtpfs \
-  bluez bluez-libs bluez-utils alsa-utils wireplumber imagemagick wget lxsession expac \
-  reflector plocate redshift flatpak ddcutil starship fish zsh zip unzip usbutils android-tools \
-  kitty dunst rsync aria2 less fastfetch viewnior fortune-mod timeshift yt-dlp cronie wlsunset 
+$SPS "${PKGS[@]}"
 PDONE
 
 sleep 2
 
 # setup flameshot
+if [[ "$QTILE" == 1 ]]; then
 PBLUE Setting Up Flameshot......
 mkdir "$FLAMESHOT_DIR"
 mkdir -p ~/Pictures/screenshots
@@ -30,15 +65,14 @@ echo "[General]
   [Shortcuts]
   TYPE_SAVE=Return" | tee "$FLAMESHOT_INI_DIR"
 PDONE
-
-sleep 2
+else
+	echo
+fi
 
 # setup bluetooth
 PBLUE Setting Up Bluetooth......
 sudo systemctl enable bluetooth --now
 PDONE
-
-sleep 2
 
 # Create bookmarks
 PBLUE Setting Up Bookmarks of Filemanager
