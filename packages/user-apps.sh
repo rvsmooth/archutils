@@ -29,15 +29,14 @@ FLATPAKS=(
 )
 
 
-PMAG Installing User Applications......
+PYELL Installing User Applications......
 $SPS "${NATIVE_PKGS[@]}"
 PDONE
 
 
-PMAG Installing Flatpaks
+PYELL Installing Flatpaks
 flatpak install -y --system "${FLATPAKS[@]}"
 PDONE
-sleep 2
 
 PYELL Setting floorp as default Browser
 xdg-settings set default-web-browser one.ablaze.floorp.desktop 

@@ -27,7 +27,7 @@ URLS=(
 	"https://github.com/rvsmooth/Wallpapers/releases/download/1/icons.zip"
 )
 
-PMAG Installing themeing packages and utils
+PYELL Installing themeing packages and utils
 $SPS "${PKGS[@]}"
 
 ## get assets
@@ -51,17 +51,17 @@ for i in "${!ASSETS[@]}"; do
     echo 
 done
 
-PBLUE Setting up gtk theme, cursor theme and font...
+PYELL Setting up gtk theme, cursor theme and font...
 mkdir "$GTK3_DIR"
 cp "$SCRIPT_DIR"/../assets/settings.ini "$GTK3_DIR"/settings.ini
 
-PBLUE setting up wallpapers
+PYELL setting up wallpapers
 git clone https://github.com/rvsmooth/wallpapers "$WALLS_DIR"
 PDONE
 
 if command -v pacman &> /dev/null
 then
-	PBLUE I really really love candy, do you not?
+	PYELL I really really love candy, do you not?
 	PYELL "Distro is Arch..."
 	sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
 else

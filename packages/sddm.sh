@@ -12,11 +12,10 @@ if [[ -d "$SDDM_THEME_DIR" ]]; then
 
 else
 
-  PMAG Installing SDDM...
+  PYELL Installing SDDM...
   $SPS sddm qt5-quickcontrols2
   PDONE
-  sleep 1
-  PBLUE Configuring SDDM...
+  PYELL Configuring SDDM...
   sudo git clone https://gitlab.com/dotsmooth/sddm-simplicity-theme "$SDDM_CLONE_DIR"
   sudo mv "$SDDM_CLONE_DIR"/simplicity "$SDDM_THEME_DIR"
 

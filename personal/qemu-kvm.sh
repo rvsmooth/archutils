@@ -3,13 +3,26 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
-PMAG Installing Utilities......
-$SPS qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode eptables \
-	iptables qemu-full
+PKGS=(
+	"bridge-utils"
+	"dmidecode"
+	"dnsmasq"
+	"eptables"
+	"iptables"
+	"openbsd-netcat"
+	"qemu"
+	"qemu-full"
+	"vde2"
+	"virt-manager"
+	"virt-viewer"
+)
+
+PYELL Installing Utilities......
+$SPS "${PKGS[@]}"
 PDONE
 
 ## virt-manager setup
-PGREEN Setting up virt-manager
+PYELL Setting up virt-manager
 sudo systemctl enable libvirtd.service --now
 sleep 1
 systemctl status libvirtd.service

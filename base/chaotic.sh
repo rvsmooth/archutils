@@ -35,7 +35,7 @@ if [[ -f /etc/pacman.d/chaotic-mirrorlist ]]; then
 else
 	install_chaotic
 	PGREEN chaotic-aur is installed successfully
-	PBLUE updating repos
+	PYELL updating repos
 	sudo pacman -Syy
 	PYELL Installing preparatory packages and paru ..
 	sudo pacman -S --noconfirm --needed "${PREP_PKGS[@]}" 

@@ -44,15 +44,14 @@ PKGS=(
 	"zsh"
 
 )
-PMAG Installing Utilities......
+
+PYELL Installing Utilities......
 $SPS "${PKGS[@]}"
 PDONE
 
-sleep 2
-
 # setup flameshot
 if [[ "$QTILE" == 1 ]]; then
-PBLUE Setting Up Flameshot......
+PYELL Setting Up Flameshot......
 mkdir "$FLAMESHOT_DIR"
 mkdir -p ~/Pictures/screenshots
 touch "$FLAMESHOT_INI_DIR"
@@ -70,12 +69,12 @@ else
 fi
 
 # setup bluetooth
-PBLUE Setting Up Bluetooth......
+PYELL Setting Up Bluetooth......
 sudo systemctl enable bluetooth --now
 PDONE
 
 # Create bookmarks
-PBLUE Setting Up Bookmarks of Filemanager
+PYELL Setting Up Bookmarks of Filemanager
 mkdir -p ~/Library ~/Downloads ~/Media ~/Music ~/Pictures/wallpapers ~/Work ~/Projects
 touch "$GTK3_DIR"/bookmarks
 echo "
@@ -89,7 +88,7 @@ file:///home/$(whoami)/Work" | tee "$GTK3_DIR/bookmarks"
 PDONE
 
 # change user shell
-PBLUE Changing User shell to fish......
+PYELL Changing User shell to fish......
 sudo chsh "$USER" -s /usr/bin/fish
 PDONE
 
