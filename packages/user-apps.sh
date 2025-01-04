@@ -23,6 +23,7 @@ FLATPAKS=(
 	"com.brave.Browser"
 	"com.notesnook.Notesnook"
 	"eu.betterbird.Betterbird"
+	"io.github.troyeguo.koodo-reader"
 	"one.ablaze.floorp"
 	"org.localsend.localsend_app"
 	"org.onlyoffice.desktopeditors"
