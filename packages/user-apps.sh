@@ -22,10 +22,12 @@ NATIVE_PKGS=(
 )
 
 FLATPAKS=(
+	"com.brave.Browser"
 	"com.notesnook.Notesnook"
 	"eu.betterbird.Betterbird"
 	"io.github.troyeguo.koodo-reader"
 	"org.localsend.localsend_app"
+	"org.mozilla.firefox"
 	"org.onlyoffice.desktopeditors"
 )
 
@@ -40,5 +42,5 @@ flatpak install -y --system "${FLATPAKS[@]}"
 PDONE
 
 PYELL Setting floorp as default Browser
-xdg-settings set default-web-browser one.ablaze.floorp.desktop 
+xdg-settings set default-web-browser org.mozilla.firefox.desktop
 PDONE
