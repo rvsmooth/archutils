@@ -38,7 +38,8 @@ PDONE
 
 
 PYELL Installing Flatpaks
-flatpak install -y --system "${FLATPAKS[@]}"
+flatpak install -y --user "${FLATPAKS[@]}"
+flatpak install -y --user https://flathub.org/beta-repo/appstream/org.gimp.GIMP.flatpakref
 PDONE
 
 PYELL Setting floorp as default Browser

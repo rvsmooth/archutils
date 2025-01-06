@@ -47,7 +47,7 @@ function wfox() {
 
 function ffox() {
 	BROWSER="firefox"
-	BROWSER_PATH="${HOME}/.mozilla/firefox"
+	BROWSER_PATH="/home/subham/.var/app/org.mozilla.firefox/.mozilla/firefox"
 	INI_PATH="${BROWSER_PATH}/profiles.ini"	
 }
 
@@ -114,7 +114,6 @@ case "$1" in
 	-ff|--firefox)
 		get_js
 		ffox
-		check_browser
 		installer
 		lunch_browser_once
 		;;
