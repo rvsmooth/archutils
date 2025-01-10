@@ -38,9 +38,10 @@ PKGS_SWAY=(
 )
 PKGS_HYPR=(
 	"gegl"
-	"hyprcursors"
+	"hyprcursor"
 	"hypridle"
 	"hyprland"
+	"hyprlock"
 	"hyprpaper"
 	"hyprutils"
 	"libdrm"
