@@ -7,6 +7,16 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
+DIRS=(
+	"Android"
+	"Documents"
+	"Downloads"
+	"Media"
+	"Music"
+	"Pictures"
+	"Projects"
+)
+
 PKGS=(
 	"alsa-utils"
 	"android-tools"
@@ -27,6 +37,8 @@ PKGS=(
 	"imagemagick"
 	"kitty"
 	"less"
+	"libappindicator-gtk3"
+	"libnotify"
 	"lxsession"
 	"mtpfs"
 	"pcmanfm-gtk3"
@@ -42,7 +54,6 @@ PKGS=(
 	"wireplumber"
 	"yt-dlp"
 	"zsh"
-
 )
 
 PYELL Installing Utilities......
@@ -75,16 +86,10 @@ PDONE
 
 # Create bookmarks
 PYELL Setting Up Bookmarks of Filemanager
-mkdir -p ~/Library ~/Downloads ~/Media ~/Music ~/Pictures/wallpapers ~/Work ~/Projects
-touch "$GTK3_DIR"/bookmarks
-echo "
-file:///home/$(whoami)/Library
-file:///home/$(whoami)/Downloads
-file:///home/$(whoami)/Media
-file:///home/$(whoami)/Music
-file:///home/$(whoami)/Pictures
-file:///home/$(whoami)/Projects
-file:///home/$(whoami)/Work" | tee "$GTK3_DIR/bookmarks"
+for dir in ${DIRS[@]}; do
+	mkdir "$HOME"/"$dir"
+	echo "file:///home/$(whoami)/$dir" | tee -a "$GTK3_DIR"/bookmarks
+done
 PDONE
 
 # change user shell
