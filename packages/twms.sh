@@ -21,6 +21,7 @@ PKGS_COMMON=(
 PKGS_QTILE=(
 	"feh"
 	"flameshot"
+	"picom"
 	"python-dbus-next"
 	"python-psutil"
 	"qtile"
