@@ -27,7 +27,6 @@ NATIVE_PKGS=(
 FLATPAKS=(
 	"com.notesnook.Notesnook"
 	"com.rustdesk.RustDesk"
-	"eu.betterbird.Betterbird"
 	"io.github.troyeguo.koodo-reader"
 	"org.localsend.localsend_app"
 )

@@ -1,51 +1,33 @@
 #!/bin/bash
 
-prompt_select_wm() {
-    local selected_options=()
-    
-    echo "Select your Window Manager :"
-    echo "1. QTile"
-    echo "2. Hyprland"
-    echo "3. Sway"
-    echo "4. All"
-    
-    read -p "Enter your choices (e.g., 1 2 3): " -a choices
-    
-    for choice in "${choices[@]}"; do
-        case $choice in
-            1)
-                selected_options+=("QTile")
-		export QTILE=1
-                ;;
-            2)
-                selected_options+=("Hyprland")
-		export HYPR=1
-                ;;
-            3)
-                selected_options+=("Sway")
-		export SWAY=1
-                ;;
-            4)
-                selected_options+=("All")
-		export QTILE=1 HYPR=1 SWAY=1
-                ;;
-            *)
-                echo "Invalid option: $choice. Skipping."
-                ;;
-        esac
-    done
-    
-    # Check if any valid options were selected
-    if [ ${#selected_options[@]} -eq 0 ]; then
-        echo "No valid options selected."
-        return 1
-    fi
-    
-    # Export selected options as a comma-separated string
-    export SELECTED_OPTIONS=$(IFS=,; echo "${selected_options[*]}")
-    
-    # Display selected options
-    echo "You selected: ${SELECTED_OPTIONS}"
-}
+WMS=("QTile" "Hyprland" "Sway" "Continue" "Exit")
+WM_SELECTED=()
 
-prompt_select_wm
+echo "Please choose a WM"
+select WM_CHOICE in "${WMS[@]}"; do
+	if [[ -n "$WM_CHOICE" ]]; then
+		if [[ "$WM_CHOICE" == "QTile" ]]; then
+			echo "You have selected QTile"
+			export QTILE=1
+			WM_SELECTED+=( "$WM_CHOICE" )
+		elif [[ "$WM_CHOICE" == "Hyprland" ]]; then
+			echo "You have selected Hyprland"
+			export HYPR=1
+			WM_SELECTED+=( "$WM_CHOICE" )
+		elif [[ "$WM_CHOICE" == "Sway" ]]; then
+			echo "You have selected Sway"
+			export SWAY=1
+			WM_SELECTED+=( "$WM_CHOICE" )
+		elif [[ "$WM_CHOICE" == "Continue" ]]; then
+			echo "Continuing with the current selections"
+			echo "Selected WMs:" "${WM_SELECTED[@]}"
+			return
+		elif [[ "$WM_CHOICE" == "Exit" ]]; then
+			 echo "Exiting the script"
+			 exit
+		fi
+	else
+		echo "Invalid selection, try again"
+	fi
+
+done

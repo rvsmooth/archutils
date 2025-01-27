@@ -33,7 +33,9 @@ $SPS "${PKGS[@]}"
 ## get assets
 mkdir -p "$FONTS_CLONE_DIR" "$ICONS_CLONE_DIR" "$THEMES_CLONE_DIR" "$FONTS_DIR" "$ICONS_DIR" "$THEMES_DIR" "$WALLS_DIR"
 
-
+if [[ -f "$HOME/.themes/.installed" ]]; then
+	echo "Themes and icons already installed"
+else
 for i in "${!ASSETS[@]}"; do
     ASSET=${ASSETS[$i]}
     URL=${URLS[$i]}
@@ -50,6 +52,7 @@ for i in "${!ASSETS[@]}"; do
     cp -rf "$CLONE_DIR"/* "$DIR"
     echo 
 done
+fi
 
 PYELL Setting up gtk theme, cursor theme and font...
 mkdir "$GTK3_DIR"
