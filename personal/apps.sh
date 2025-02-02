@@ -5,6 +5,6 @@ BARE_REPO_DIR="$HOME/.dotfiles"
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PYELL Installing personal packages
-$SPS libva libva-intel-driver libva-utils emacs cmake
+$SPS libva libva-intel-driver libva-utils 
 PDONE
 

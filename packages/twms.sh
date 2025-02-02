@@ -23,6 +23,7 @@ PKGS_QTILE=(
 	"flameshot"
 	"picom"
 	"python-dbus-next"
+	"python-iwlib"
 	"python-psutil"
 	"qtile"
 	"qtile-extras"
