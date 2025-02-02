@@ -8,6 +8,7 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 
 PREP_PKGS=(
 	"curl"
+	"fakeroot"
 	"git"
 	"paru"
 	"wget"
