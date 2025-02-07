@@ -47,7 +47,7 @@ function wfox() {
 
 function ffox() {
 	BROWSER="firefox"
-	BROWSER_PATH="/home/subham/.var/app/org.mozilla.firefox/.mozilla/firefox"
+	BROWSER_PATH="/home/subham/.mozilla/firefox"
 	INI_PATH="${BROWSER_PATH}/profiles.ini"	
 }
 
