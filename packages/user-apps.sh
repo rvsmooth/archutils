@@ -8,11 +8,9 @@ NATIVE_PKGS=(
 	"btop"
 	"brave-bin"
 	"calibre"
-	"evolution"
 	"flatpak"
 	"floorp-bin"
 	"gimp"
-	"gnome-keyring"
 	"kiwix-desktop"
 	"libreoffice-fresh"
 	"mpv"
@@ -22,6 +20,7 @@ NATIVE_PKGS=(
 	"npm"
 	"obs-studio"
 	"qbittorrent"
+	"thunderbird"
 )
 
 FLATPAKS=(
