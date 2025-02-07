@@ -22,5 +22,6 @@ source "$INSTALL_DIR"/packages/sddm.sh
 source "$INSTALL_DIR"/icandy/themeing.sh
 source "$INSTALL_DIR"/packages/user-apps.sh
 source "$INSTALL_DIR"/packages/utilities.sh
+source "$INSTALL_DIR"/personal/firefox-installer.sh --install
 
 PGREEN Installation is Done.'\n'A reboot is recommended before proceeding to use the system.

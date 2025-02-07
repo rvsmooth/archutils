@@ -9,7 +9,6 @@ NATIVE_PKGS=(
 	"brave-bin"
 	"calibre"
 	"flatpak"
-	"floorp-bin"
 	"gimp"
 	"kiwix-desktop"
 	"libreoffice-fresh"
