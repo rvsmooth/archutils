@@ -33,7 +33,7 @@ function uninstall_firefox(){
 		echo "Uninstalling firefox"
 		sudo rm -rf  /opt/firefox /usr/local/share/applications/firefox.desktop /usr/local/bin/firefox
 	else 
-		echo $FIREFOX_INSTALLED
+		echo "Firefox is not installed."
 	fi
 }
 
