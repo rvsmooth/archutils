@@ -26,7 +26,6 @@ PKGS_QTILE=(
 	"python-iwlib"
 	"python-psutil"
 	"qtile"
-	"qtile-extras"
 	"redshift"
 	"xclip"
 	)
