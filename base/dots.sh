@@ -3,7 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTS_CLONE_DIR='/tmp/dotfiles'
 LOCAL_DOTS_VERSION="$(cat ${HOME}/.config/assets/version)"
-UPSTREAM_VERSION=$(curl https://gitlab.com/rvsmooth/dotfiles/-/raw/main/.config/assets/version)
+UPSTREAM_VERSION=$(curl https://raw.githubusercontent.com/rvsmooth/dotfiles/refs/heads/main/.config/assets/version)
 BARE_REPO="${HOME}/.dotfiles"
 BARE_REPO_BAK="${HOME}/.dotfiles-bak"
 CONFIGS="${HOME}/.config"
@@ -30,7 +30,7 @@ function bak_old_repo(){
 
 function get_dots(){
 	PYELL Installing dotfiles as a bare git repo
-        git clone https://gitlab.com/rvsmooth/dotfiles -b main $DOTS_CLONE_DIR
+        git clone https://github.com/rvsmooth/dotfiles -b main $DOTS_CLONE_DIR
 	cd $DOTS_CLONE_DIR || { PRED "Failed to navigate to dotfiles directory."; exit 1; }
 	cp -rf .* * $HOME/ || { PRED "Failed to copy dotfiles."; exit 1; } 
 	cd -
