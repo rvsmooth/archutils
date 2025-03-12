@@ -23,6 +23,7 @@ function get_cursors(){
 
 function apply_cursors(){
 	gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_CHOICE"
+	sudo flatpak  override --env=XCURSOR_PATH=~/.icons
 }
 
 function apply_theme(){
