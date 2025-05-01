@@ -8,52 +8,53 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR"/../icandy/colors.sh
 
 DIRS=(
-	"Android"
-	"Documents"
-	"Downloads"
-	"Media"
-	"Music"
-	"Pictures"
-	"Projects"
+  "Android"
+  "Documents"
+  "Downloads"
+  "Media"
+  "Music"
+  "Pictures"
+  "Projects"
 )
 
 PKGS=(
-	"alsa-utils"
-	"android-tools"
-	"aria2"
-	"bluez"
-	"bluez-libs"
-	"bluez-utils"
-	"cronie"
-	"ddcutil"
-	"dunst"
-	"engrampa"
-	"expac"
-	"fastfetch"
-	"fish"
-	"fortune-mod"
-	"gvfs"
-	"gvfs-mtp"
-	"imagemagick"
-	"kitty"
-	"less"
-	"libappindicator-gtk3"
-	"libnotify"
-	"mtpfs"
-	"pcmanfm-gtk3"
-	"plocate"
-	"polkit-gnome"
-	"reflector"
-	"rofi"
-	"rsync"
-	"starship"
-	"timeshift"
-	"unzip"
-	"usbutils"
-	"viewnior"
-	"wireplumber"
-	"yt-dlp"
-	"zsh"
+  "alsa-utils"
+  "android-tools"
+  "aria2"
+  "bluez"
+  "bluez-libs"
+  "bluez-utils"
+  "cliphist"
+  "ddcutil"
+  "dunst"
+  "engrampa"
+  "expac"
+  "fastfetch"
+  "fish"
+  "gvfs"
+  "gvfs-mtp"
+  "imagemagick"
+  "kitty"
+  "less"
+  "libappindicator-gtk3"
+  "libnotify"
+  "mtpfs"
+  "plocate"
+  "polkit-gnome"
+  "reflector"
+  "rofi"
+  "rsync"
+  "starship"
+  "thunar"
+  "thunar-volman"
+  "thunar-archive-plugin"
+  "timeshift"
+  "unzip"
+  "usbutils"
+  "viewnior"
+  "wireplumber"
+  "yt-dlp"
+  "zsh"
 )
 
 PYELL Installing Utilities......
@@ -62,21 +63,21 @@ PDONE
 
 # setup flameshot
 if [[ "$QTILE" == 1 ]]; then
-PYELL Setting Up Flameshot......
-mkdir "$FLAMESHOT_DIR"
-mkdir -p ~/Pictures/screenshots
-touch "$FLAMESHOT_INI_DIR"
+  PYELL Setting Up Flameshot......
+  mkdir "$FLAMESHOT_DIR"
+  mkdir -p ~/Pictures/screenshots
+  touch "$FLAMESHOT_INI_DIR"
 
-echo "[General]
+  echo "[General]
   contrastOpacity=188
   savePath=/home/$(whoami)/Pictures/screenshots
   savePathFixed=true
 
   [Shortcuts]
   TYPE_SAVE=Return" | tee "$FLAMESHOT_INI_DIR"
-PDONE
+  PDONE
 else
-	echo
+  echo
 fi
 
 # setup bluetooth
@@ -87,8 +88,8 @@ PDONE
 # Create bookmarks
 PYELL Setting Up Bookmarks of Filemanager
 for dir in ${DIRS[@]}; do
-	mkdir "$HOME"/"$dir"
-	echo "file:///home/$(whoami)/$dir" | tee -a "$GTK3_DIR"/bookmarks
+  mkdir "$HOME"/"$dir"
+  echo "file:///home/$(whoami)/$dir" | tee -a "$GTK3_DIR"/bookmarks
 done
 PDONE
 
