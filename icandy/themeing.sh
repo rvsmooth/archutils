@@ -1,75 +1,126 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GTK3_DIR="${HOME}/.config/gtk-3.0"
-FONTS_CLONE_DIR="/tmp/fonts"
-THEMES_CLONE_DIR="/tmp/themes"
-ICONS_CLONE_DIR="/tmp/icons"
-THEMES_DIR="${HOME}/.themes"
-ICONS_DIR="${HOME}/.icons"
-FONTS_DIR="${HOME}/.fonts"
-WALLS_DIR="${HOME}/Pictures/wallpapers"
+WORK_DIR="/tmp/work"
+SRC_URL="https://github.com/rvsmooth/wallpapers/releases/latest/download"
+ICONS_DIR="$HOME/.icons"
+THEMES_DIR="$HOME/.themes"
+WALLS_REPO="https://github.com/rvsmooth/wallpapers"
+WALL_DIR="$HOME/Pictures/wallpapers"
 
 source "$SCRIPT_DIR"/../icandy/colors.sh
 PKGS=(
-	"font-manager"
-	"nwg-look"
-	"papirus-icon-theme"
-	"ttf-jetbrains-mono-nerd"
-	"ttf-roboto"
-	"ttf-ubuntu-font-family"
+  "font-manager"
+  "nwg-look"
+  "papirus-icon-theme"
+  "ttf-jetbrains-mono-nerd"
+  "ttf-roboto"
+  "ttf-ubuntu-font-family"
 )
 
-ASSETS=("fonts" "themes" "icons")
-URLS=(
-	"https://github.com/rvsmooth/Wallpapers/releases/download/1/fonts-ebook.zip"
-	"https://github.com/rvsmooth/Wallpapers/releases/download/1/themes.zip"
-	"https://github.com/rvsmooth/Wallpapers/releases/download/1/icons.zip"
+DIRS=(
+  "/usr/share/themes"
+  "$HOME/.local/share/themes"
+  "$HOME/.themes"
+  "/usr/share/icons"
+  "$HOME/.local/share/icons"
+  "$HOME/.icons"
 )
 
 PYELL Installing themeing packages and utils
 $SPS "${PKGS[@]}"
 
-## get assets
-mkdir -p "$FONTS_CLONE_DIR" "$ICONS_CLONE_DIR" "$THEMES_CLONE_DIR" "$FONTS_DIR" "$ICONS_DIR" "$THEMES_DIR" "$WALLS_DIR"
+# declare dictionaries
+declare -A cursors
+declare -A icons
+declare -A themes
 
-if [[ -f "$HOME/.themes/.installed" ]]; then
-	echo "Themes and icons already installed"
-else
-for i in "${!ASSETS[@]}"; do
-    ASSET=${ASSETS[$i]}
-    URL=${URLS[$i]}
-    CLONE_DIR="/tmp/${ASSET}"  
-    DIR="${HOME}/.${ASSET}"
-    
-    PYELL "Downloading $ASSET..."
-    wget -qO "$CLONE_DIR"/"$ASSET".zip "$URL"
-    PDONE
-    PYELL "Setting up $ASSET..."
-    unzip -qo "$CLONE_DIR"/"$ASSET".zip -d "$CLONE_DIR"
-    PDONE
-    rm -f "$CLONE_DIR"/*.zip
-    cp -rf "$CLONE_DIR"/* "$DIR"
-    echo 
-done
-fi
+# cursors
+cursors["Bibata-Modern-Ice.tar.xz"]="Bibata-Modern-Ice"
+cursors["Bibata-Modern-Classic.tar.xz"]="Bibata-Modern-Classic"
 
-PYELL Setting up gtk theme, cursor theme and font...
-mkdir "$GTK3_DIR"
-cp "$SCRIPT_DIR"/../assets/settings.ini "$GTK3_DIR"/settings.ini
+# icons
+icons["kora-1-7-1.tar.xz"]="kora kora-light kora-light-panel"
+icons["papirus-icon-theme-20250201.tar.gz"]="Papirus Papirus-Dark Papirus-Light ePapirus ePapirus-Dark"
 
-PYELL setting up wallpapers
-git clone https://github.com/rvsmooth/wallpapers "$WALLS_DIR"
-PDONE
+# themes
+themes["Gruvbox-Dark-BL-MB.zip"]="Gruvbox-Dark  Gruvbox-Dark-hdpi  Gruvbox-Dark-xhdpi"
+themes["Tokyonight-Dark-BL-MB.zip"]="Tokyonight-Dark Tokyonight-Dark-hdpi Tokyonight-Dark-xhdpi"
 
-if command -v pacman &> /dev/null
-then
-	PYELL I really really love candy, do you not?
-	PYELL "Distro is Arch..."
-	sudo sed -i '/\[options\]/a ILoveCandy' /etc/pacman.conf
-else
-	echo
-fi
+function download_asset() {
+  if [ -e $WORK_DIR/$package ]; then
+    PYELL $package is already downloaded
+  else
+    __gh_download rvsmooth wallpapers "$package"
+    if [ $? -ne 0 ]; then
+      echo "$SRC_URL/$package"
+      echo "Failed to download $package"
+      continue
+    fi
 
-PDONE
+  fi
 
+}
+
+function setup_asset() {
+  array="$1"
+  declare -n array_final="$array"
+  for package in ${!array_final[@]}; do
+    if [[ "$array" = "cursors" || "$array" == "icons" ]]; then
+      for value in ${array_final[$package]}; do
+        if [[ -d "${DIRS[3]}/$value" || -d "${DIRS[4]}/$value" || -d "${DIRS[5]}/$value" ]]; then
+          echo "$value exists"
+        else
+          echo "$value does not exist"
+          download_asset
+          export MOVE_ICONS=1
+
+        fi
+      done
+      __ex $package
+      if [[ "$MOVE_ICONS" == "1" ]]; then
+        mv */ $ICONS_DIR
+      else
+        echo
+      fi
+    elif
+      [[ "$array" == "themes" ]]
+    then
+      for value in ${array_final[$package]}; do
+        if [[ -d "${DIRS[0]}/$value" || -d "${DIRS[1]}/$value" || -d "${DIRS[2]}/$value" ]]; then
+          echo "$value exists"
+        else
+          echo "$value does not exist"
+          download_asset
+          export MOVE_THEMES=1
+
+        fi
+      done
+      __ex $package
+      if [[ "$MOVE_THEMES" == "1" ]]; then
+        mv */ $THEMES_DIR
+      else
+        echo
+      fi
+    else
+      echo "Undefined"
+    fi
+
+  done
+}
+
+# create directories if they do not exist
+
+[[ ! -d "$THEMES_DIR" || ! -d "$ICONS_DIR" ]] && mkdir -p $THEMES_DIR $ICONS_DIR
+
+[ ! -d "$WORK_DIR" ] && mkdir -p "$WORK_DIR"
+
+# switch to work dir
+cd "$WORK_DIR"
+setup_asset cursors
+setup_asset icons
+setup_asset themes
+cd -
+
+# clone wallpapers
+[ ! -d "$WALL_DIR" ] && git clone "$WALLS_REPO" "$WALL_DIR"
