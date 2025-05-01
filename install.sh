@@ -14,14 +14,14 @@ cat <<"EOF"
 EOF
 echo -e "${RESET}"
 
-source "$INSTALL_DIR"/base/select.sh
-source "$INSTALL_DIR"/base/chaotic.sh
-source "$INSTALL_DIR"/base/dots.sh
-source "$INSTALL_DIR"/packages/twms.sh
-source "$INSTALL_DIR"/packages/sddm.sh
-source "$INSTALL_DIR"/icandy/themeing.sh
-source "$INSTALL_DIR"/packages/user-apps.sh
-source "$INSTALL_DIR"/packages/utilities.sh
-source "$INSTALL_DIR"/personal/firefox-installer.sh --install
+source "$INSTALL_DIR/base/select.sh"
+source "$INSTALL_DIR/base/chaotic.sh"
+source "$INSTALL_DIR/base/dots.sh"
+source "$INSTALL_DIR/packages/twms.sh"
+source "$INSTALL_DIR/packages/sddm.sh"
+source "$INSTALL_DIR/icandy/theming.sh"
+source "$INSTALL_DIR/icandy/nerdfonts.sh"
+source "$INSTALL_DIR/packages/user-apps.sh"
+source "$INSTALL_DIR/packages/utilities.sh"
 
 PGREEN Installation is Done.'\n'A reboot is recommended before proceeding to use the system.

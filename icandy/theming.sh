@@ -13,9 +13,6 @@ PKGS=(
   "font-manager"
   "nwg-look"
   "papirus-icon-theme"
-  "ttf-jetbrains-mono-nerd"
-  "ttf-roboto"
-  "ttf-ubuntu-font-family"
 )
 
 DIRS=(
