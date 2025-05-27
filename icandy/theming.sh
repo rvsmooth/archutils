@@ -12,7 +12,6 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 PKGS=(
   "font-manager"
   "nwg-look"
-  "papirus-icon-theme"
 )
 
 DIRS=(
@@ -43,6 +42,14 @@ icons["papirus-icon-theme-20250201.tar.gz"]="Papirus Papirus-Dark Papirus-Light 
 # themes
 themes["Gruvbox-Dark-BL-MB.zip"]="Gruvbox-Dark  Gruvbox-Dark-hdpi  Gruvbox-Dark-xhdpi"
 themes["Tokyonight-Dark-BL-MB.zip"]="Tokyonight-Dark Tokyonight-Dark-hdpi Tokyonight-Dark-xhdpi"
+themes["Catppuccin-Dark-BL-LB.zip"]="Catppuccin-Dark Catppuccin-Dark-hdpi Catppuccin-Dark-xhdpi"
+themes["Dracula.tar.xz"]="Dracula"
+themes["Dracula-pink-accent.tar.xz"]="Dracula-pink-accent"
+themes["Dracula-slim.tar.xz"]="Dracula-slim Dracula-slim-standard-buttons"
+themes["Nordic.tar.xz"]="Nordic Nordic-v40"
+themes["Nordic-darker.tar.xz"]="Nordic-darker Nordic-darker-v40"
+themes["Everforest-Dark-BL-MB.zip"]="Everforest-Dark Everforest-Dark-xhdpi Everforest-Dark-hdpi"
+themes["Everforest-Dark-Soft-BL-MB.zip"]="Everforest-Dark-Soft Everforest-Dark-Soft-xhdpi Everforest-Dark-Soft-hdpi"
 
 function download_asset() {
   if [ -e $WORK_DIR/$package ]; then
