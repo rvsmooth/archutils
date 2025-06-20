@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 ICONS_DIR="$HOME/.icons"
 THEMES_DIR="$HOME/.themes"
 WORK_DIR="/tmp/work"
@@ -8,6 +7,7 @@ theme_url=$(curl -s $WEB | jq -r '.assets[] | .browser_download_url' | awk -F '/
 icons_url=$(curl -s $WEB | jq -r '.assets[] | .browser_download_url' | awk -F '/' '{print $NF}' | grep -Ei 'papirus|bibata|kora')
 theme=($theme_url)
 icon=($icons_url)
+
 __extract() {
   if [ -f $1 ]; then
     case $1 in
@@ -20,13 +20,14 @@ __extract() {
     echo "'$1' is not a valid file"
   fi
 }
+
 __download_assets() {
   DL_URL="https://github.com/rvsmooth/wallpapers/releases/download/Continuous"
   URL="${DL_URL}/$1"
-  wget -nc --wait=2 --random-wait $URL
+  wget -q --show-progress -nc --wait=2 --random-wait $URL
 }
 
-function array_load() {
+array_load() {
   OPTIONS=()
   local -n arr1=$1
 
@@ -34,7 +35,7 @@ function array_load() {
     OPTIONS+=("$i" "$i" OFF)
   done
 
-  CHOICES=$(whiptail --separate-output --checklist "Select assets to download:" 20 120 10 \
+  CHOICES=$(whiptail --separate-output --checklist "Select $1 to download:" 20 120 10 \
     "${OPTIONS[@]}" 3>&1 1>&2 2>&3)
 
   STATUS=$?

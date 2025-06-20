@@ -55,6 +55,11 @@ PKGS_HYPR=(
   "mtdev"
   "pixman"
 )
+PKGS_NIRI=(
+  "gnome-keyring"
+  "niri"
+  "xdg-desktop-portal-gnome"
+)
 
 PKGS_STAGED=()
 
@@ -78,6 +83,15 @@ fi
 if [[ "$SWAY" == 1 ]]; then
   PYELL Installing Sway and its dependencies....
   PKGS_STAGED+=("${PKGS_COMMON[@]}" "${PKGS_SWAY[@]}")
+  $SPS "${PKGS_STAGED[@]}"
+  PDONE
+else
+  echo
+fi
+
+if [[ "$NIRI" == 1 ]]; then
+  PYELL Installing Niri and its dependencies....
+  PKGS_STAGED+=("${PKGS_COMMON[@]}" "${PKGS_NIRI[@]}")
   $SPS "${PKGS_STAGED[@]}"
   PDONE
 else

@@ -6,7 +6,6 @@ source "$SCRIPT_DIR"/../icandy/colors.sh
 
 NATIVE_PKGS=(
   "btop"
-  "brave-bin"
   "calibre"
   "flatpak"
   "gimp"

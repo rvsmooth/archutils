@@ -16,7 +16,7 @@ else
   $SPS sddm qt5-quickcontrols2
   PDONE
   PYELL Configuring SDDM...
-  sudo git clone https://gitlab.com/dotsmooth/sddm-simplicity-theme "$SDDM_CLONE_DIR"
+  sudo git clone https://github.com/rvsmooth/sddm-simplicity-theme "$SDDM_CLONE_DIR"
   sudo mv "$SDDM_CLONE_DIR"/simplicity "$SDDM_THEME_DIR"
 
   echo "[Theme]
@@ -28,4 +28,3 @@ fi
 PMAG Enabling SDDM
 sudo systemctl enable sddm
 PDONE
-
