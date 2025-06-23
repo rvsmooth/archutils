@@ -1,6 +1,5 @@
-# My scripts repository
+# ArchUtils
 
-**Author:** RVSmooth
 
 This is a WIP repository (although all scripts are functional), for installation of my [dotfiles](https://github.com/rvsmooth/dotfiles).
 
