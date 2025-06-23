@@ -1,0 +1,47 @@
+name: Sync Only .sh Files to Pages Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.sh'
+  workflow_dispatch:
+
+jobs:
+  sync-sh-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: main
+
+    - name: Set up Git config
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Create orphan pages branch with only .sh files
+      run: |
+        # Create orphan branch
+        git checkout --orphan pages-temp
+        # Remove everything
+        git rm -rf .
+        # Restore only .sh files from main
+        git checkout main -- '*.sh'
+        # Move .sh files to root (in case nested)
+        rm install.sh
+        for file in $(find . -mindepth 2 -name "*.sh"); do
+        cp $file .
+        done
+        rm -rf */
+        ls -al > scripts 
+        git add .
+        git commit -m "Sync only .sh files to pages branch"
+
+    - name: Force push to pages branch
+      run: |
+        git push origin pages-temp:pages --force
