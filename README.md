@@ -17,7 +17,7 @@ Scripts under `personal/` will not be executed automatically and are optional.
 - [ ] Install dash for niri
 - [ ] Set up sddm, nerdfonts, ebookfonts
 - [ ] Fix ffmpegthumbnailer
-- [ ] Fix nerdfonts wget
+- [X] Fix nerdfonts wget
 - [ ] Create `.cache/wallpaper` directoryX- [x] Add gcc, fd, gammastep
 - [X] Add gcc, fd, gammastep
 - [ ] Setup qt theme
