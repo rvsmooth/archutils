@@ -21,4 +21,5 @@ Scripts under `personal/` will not be executed automatically and are optional.
 - [ ] Create `.cache/wallpaper` directory
 - [ ] Add gcc, fd, gammastep
 - [ ] nwg-look for niri
+- [ ] Setup qt theme
 
