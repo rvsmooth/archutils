@@ -56,9 +56,11 @@ PKGS_HYPR=(
   "pixman"
 )
 PKGS_NIRI=(
+  "gammastep"
   "gnome-keyring"
   "niri"
   "xdg-desktop-portal-gnome"
+  "hyprpaper"
 )
 
 PKGS_STAGED=()

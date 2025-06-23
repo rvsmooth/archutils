@@ -18,7 +18,6 @@ Scripts under `personal/` will not be executed automatically and are optional.
 - [ ] Set up sddm, nerdfonts, ebookfonts
 - [ ] Fix ffmpegthumbnailer
 - [ ] Fix nerdfonts wget
-- [ ] Create `.cache/wallpaper` directory
-- [ ] Add gcc, fd, gammastep
-- [ ] nwg-look for niri
+- [ ] Create `.cache/wallpaper` directoryX- [x] Add gcc, fd, gammastep
+- [X] Add gcc, fd, gammastep
 - [ ] Setup qt theme
