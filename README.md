@@ -14,7 +14,7 @@ Scripts under `personal/` will not be executed automatically and are optional.
 
 - [ ] Resolve conflict between rofi and rofi-wayland
 - [X] Load chaotic entry only if mirrorlist is present
-- [ ] Install dash for niri
+- [X] Install dash for niri
 - [ ] Set up sddm, nerdfonts, ebookfonts
 - [ ] Fix ffmpegthumbnailer
 - [X] Fix nerdfonts wget

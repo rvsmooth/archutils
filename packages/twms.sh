@@ -56,6 +56,7 @@ PKGS_HYPR=(
   "pixman"
 )
 PKGS_NIRI=(
+  "dash"
   "gammastep"
   "gnome-keyring"
   "niri"
