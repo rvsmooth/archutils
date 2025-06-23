@@ -13,7 +13,7 @@ Scripts under `personal/` will not be executed automatically and are optional.
 ## To Do
 
 - [ ] Resolve conflict between rofi and rofi-wayland
-- [ ] Load chaotic entry only if mirrorlist is present
+- [X] Load chaotic entry only if mirrorlist is present
 - [ ] Install dash for niri
 - [ ] Set up sddm, nerdfonts, ebookfonts
 - [ ] Fix ffmpegthumbnailer
@@ -22,4 +22,3 @@ Scripts under `personal/` will not be executed automatically and are optional.
 - [ ] Add gcc, fd, gammastep
 - [ ] nwg-look for niri
 - [ ] Setup qt theme
-
