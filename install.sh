@@ -20,5 +20,7 @@ source "$INSTALL_DIR/base/dots.sh"
 source "$INSTALL_DIR/packages/twms.sh"
 source "$INSTALL_DIR/packages/user-apps.sh"
 source "$INSTALL_DIR/packages/utilities.sh"
+source "$INSTALL_DIR/icandy/nerdfonts.sh"
+source "$INSTALL_DIR/icandy/sddm.sh"
 
 PGREEN Installation is Done.'\n'A reboot is recommended before proceeding to use the system.

@@ -15,9 +15,10 @@ Scripts under `personal/` will not be executed automatically and are optional.
 - [ ] Resolve conflict between rofi and rofi-wayland
 - [X] Load chaotic entry only if mirrorlist is present
 - [X] Install dash for niri
-- [ ] Set up sddm, nerdfonts, ebookfonts
-- [ ] Fix ffmpegthumbnailer
+- [ ] Set up ~sddm, nerdfonts~, ebookfonts
+- [X] Fix ffmpegthumbnailer
 - [X] Fix nerdfonts wget
-- [ ] Create `.cache/wallpaper` directoryX- [x] Add gcc, fd, gammastep
+- ~[ ] Create `.cache/wallpaper` directory~ 
+- [X] Add gcc, fd, gammastep
 - [X] Add gcc, fd, gammastep
 - [ ] Setup qt theme

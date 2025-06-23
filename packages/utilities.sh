@@ -36,7 +36,7 @@ PKGS=(
   "gst-plugins-good"
   "gst-plugins-bad"
   "gst-plugins-base"
-  "ffmpegthunbnailer"
+  "ffmpegthumbnailer"
   "tumbler"
   "gvfs"
   "gvfs-mtp"
