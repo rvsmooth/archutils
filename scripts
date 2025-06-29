@@ -1,0 +1,23 @@
+total 84
+drwxr-xr-x 3 runner docker 4096 Jun 29 09:57 .
+drwxr-xr-x 3 runner docker 4096 Jun 29 09:57 ..
+drwxr-xr-x 7 runner docker 4096 Jun 29 09:57 .git
+-rwxr-xr-x 1 runner docker  239 Jun 29 09:57 apps.sh
+-rwxr-xr-x 1 runner docker 2878 Jun 29 09:57 bfoxi.sh
+-rwxr-xr-x 1 runner docker 2053 Jun 29 09:57 btrfs.sh
+-rwxr-xr-x 1 runner docker 1799 Jun 29 09:57 chaotic.sh
+-rwxr-xr-x 1 runner docker 1631 Jun 29 09:57 colors.sh
+-rwxr-xr-x 1 runner docker 2154 Jun 29 09:57 dots.sh
+-rwxr-xr-x 1 runner docker 2013 Jun 29 09:57 firefox-installer.sh
+-rwxr-xr-x 1 runner docker 1107 Jun 29 09:57 git_setup.sh
+-rwxr-xr-x 1 runner docker 1443 Jun 29 09:57 nerdfonts.sh
+-rwxr-xr-x 1 runner docker  588 Jun 29 09:57 qemu-kvm.sh
+-rw-r--r-- 1 runner docker    0 Jun 29 09:57 scripts
+-rwxr-xr-x 1 runner docker  666 Jun 29 09:57 sddm.sh
+-rwxr-xr-x 1 runner docker 1038 Jun 29 09:57 select.sh
+-rwxr-xr-x 1 runner docker 2620 Jun 29 09:57 smoothemer.sh
+-rwxr-xr-x 1 runner docker 1943 Jun 29 09:57 theme_setup.sh
+-rwxr-xr-x 1 runner docker 3550 Jun 29 09:57 theming.sh
+-rwxr-xr-x 1 runner docker 1542 Jun 29 09:57 twms.sh
+-rwxr-xr-x 1 runner docker  374 Jun 29 09:57 user-apps.sh
+-rwxr-xr-x 1 runner docker 1842 Jun 29 09:57 utilities.sh
