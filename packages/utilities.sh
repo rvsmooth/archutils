@@ -31,13 +31,12 @@ PKGS=(
   "expac"
   "fastfetch"
   "fd"
+  "ffmpegthumbnailer"
   "fish"
   "gcc"
-  "gst-plugins-good"
   "gst-plugins-bad"
   "gst-plugins-base"
-  "ffmpegthumbnailer"
-  "tumbler"
+  "gst-plugins-good"
   "gvfs"
   "gvfs-mtp"
   "imagemagick"
@@ -46,16 +45,20 @@ PKGS=(
   "libappindicator-gtk3"
   "libnotify"
   "mtpfs"
+  "nwg-look"
+  "pavucontrol"
   "plocate"
   "polkit-gnome"
   "reflector"
   "rofi"
   "rsync"
   "starship"
+  "swww"
   "thunar"
-  "thunar-volman"
   "thunar-archive-plugin"
+  "thunar-volman"
   "timeshift"
+  "tumbler"
   "unzip"
   "usbutils"
   "viewnior"
@@ -103,9 +106,4 @@ PDONE
 # change user shell
 PYELL Changing User shell to fish......
 sudo chsh "$USER" -s /usr/bin/fish
-PDONE
-
-# enable cronie
-PYELL Enabling cronie...
-sudo systemctl enable cronie
 PDONE
