@@ -107,3 +107,7 @@ PDONE
 PYELL Changing User shell to fish......
 sudo chsh "$USER" -s /usr/bin/fish
 PDONE
+
+PYELL Create wallpaper directory
+mkdir -p ~/.cache/wallpaper
+PDONE
