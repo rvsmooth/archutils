@@ -5,13 +5,8 @@ import os
 from prompt import selection
 
 
-def zypp(install=None, remove=None, pkg_list=None, pkg=None):
-    install_cmd = [
-        "sudo",
-        "pacman",
-        "--noconfirm",
-        "-S"
-    ]
+def rvstall(install=None, remove=None, pkg_list=None, pkg=None):
+    install_cmd = ["sudo", "pacman", "--noconfirm", "-S"]
     remove_cmd = ["sudo", "pacman", "-R", "--no-confirm"]
     check_cmd = ["sudo", "pacman", "-Qq"]
 
@@ -99,17 +94,17 @@ else:
 # perfomed with a prompt
 if selection:
     for i in selection:
-        zypp(install=True, pkg_list=i)
+        rvstall(install=True, pkg_list=i)
 
 # Removes all the packages under remove-list in packages.json
 # It's to be used to remove unneeded packages
 # Or packages creating conflicts
-zypp(remove=True, pkg_list="remove-list")
+rvstall(remove=True, pkg_list="remove-list")
 
 # Install common packages
 options = ["multimedia", "utilities", "user"]
 for i in options:
-    zypp(install=True, pkg_list=i)
+    rvstall(install=True, pkg_list=i)
 
 # Error check message
 print("Check error.txt for any errors, before logging into ur system")
