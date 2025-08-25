@@ -9,8 +9,8 @@ def zypp(install=None, remove=None, pkg_list=None, pkg=None):
     install_cmd = [
         "sudo",
         "pacman",
-        "-S",
-        "--no-confirm",
+        "--noconfirm",
+        "-S"
     ]
     remove_cmd = ["sudo", "pacman", "-R", "--no-confirm"]
     check_cmd = ["sudo", "pacman", "-Qq"]
@@ -19,12 +19,12 @@ def zypp(install=None, remove=None, pkg_list=None, pkg=None):
         for package in app_list[pkg_list]:
             check_cmd = check_cmd[:3]
             check_cmd.append(package)
-            is_available = run(check_cmd, capture_output=True, shell=True)
+            is_available = run(check_cmd, capture_output=True)
             if is_available.returncode == 0:
                 print(package, "is already installed")
             else:
                 print("Installing", package)
-                install_cmd = install_cmd[:8]
+                install_cmd = install_cmd[:4]
                 install_cmd.append(package)
                 install = run(install_cmd, capture_output=True)
                 with open(r"error.txt", "a") as file_object:
@@ -33,13 +33,13 @@ def zypp(install=None, remove=None, pkg_list=None, pkg=None):
     elif install and pkg:
         check_cmd = check_cmd[:3]
         check_cmd.append(pkg)
-        is_available = run(check_cmd, capture_output=True, shell=True)
+        is_available = run(check_cmd, capture_output=True)
         print(is_available.returncode)
         if is_available.returncode == 0:
             print(pkg, "is already installed")
         else:
             print("Installing", pkg)
-            install_cmd = install_cmd[:8]
+            install_cmd = install_cmd[:4]
             install_cmd.append(pkg)
             install = run(install_cmd, capture_output=True)
             with open(r"error.txt", "a") as file_object:
@@ -49,7 +49,7 @@ def zypp(install=None, remove=None, pkg_list=None, pkg=None):
         for package in app_list[pkg_list]:
             check_cmd = check_cmd[:3]
             check_cmd.append(package)
-            is_available = run(check_cmd, capture_output=True, shell=True)
+            is_available = run(check_cmd, capture_output=True)
             if is_available.returncode == 0:
                 print(package, "is found")
                 remove_cmd = remove_cmd[:4]
@@ -63,7 +63,7 @@ def zypp(install=None, remove=None, pkg_list=None, pkg=None):
     elif remove and pkg:
         check_cmd = check_cmd[:3]
         check_cmd.append(pkg)
-        is_available = run(check_cmd, capture_output=True, shell=True)
+        is_available = run(check_cmd, capture_output=True)
         print(is_available.returncode)
         if is_available.returncode == 0:
             remove_cmd = remove_cmd[:4]
@@ -90,7 +90,7 @@ if os.path.exists("/tmp/packages.json"):
         app_list = load(applist)
 else:
     get_pkgs(
-        "https://raw.githubusercontent.com/rvsmooth/archutils/refs/heads/main/packages.json"
+        "https://raw.githubusercontent.com/rvsmooth/archutils/refs/heads/staging/packages.json"
     )
     with open("/tmp/packages.json", "r") as applist:
         app_list = load(applist)
