@@ -2,6 +2,7 @@ from json import load
 from subprocess import run
 from requests import get
 import os
+import dots
 from prompt import selection
 
 
@@ -105,6 +106,10 @@ rvstall(remove=True, pkg_list="remove-list")
 options = ["multimedia", "utilities", "user"]
 for i in options:
     rvstall(install=True, pkg_list=i)
+
+# Install dotfiles
+print("Installing dotfiles")
+dots.main()
 
 # Error check message
 print("Check error.txt for any errors, before logging into ur system")
