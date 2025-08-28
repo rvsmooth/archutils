@@ -1,23 +1,25 @@
 #!/usr/bin/env python
-from questionary import prompt
+from InquirerPy import prompt
 from sys import exit
 
 question = [
     {
         "type": "checkbox",
-        "name": "wm",
         "message": "What do you want?",
         "choices": ["hyprland", "niri", "qtile"],
-    }
+    },
+    {
+        "type": "confirm",
+        "message": "Do you want to install dotfiles?",
+        "confirm_letter": "y",
+        "reject_letter": "n",
+    },
 ]
 
-answers = prompt(question)
 
-selection = list(answers["wm"])
-
-if selection:
-    print("You have selected", selection)
-else:
-    print("You haven't selected any WM")
-    print("Aborting")
-    exit(0)
+def main():
+    selection = prompt(question)
+    if len(selection[0]) < 1:
+        print("No window manager's selection \naborting")
+        exit(1)
+    return selection

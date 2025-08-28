@@ -3,7 +3,7 @@ from subprocess import run
 from requests import get
 import os
 import dots
-from prompt import selection
+import prompt
 
 
 def rvstall(install=None, remove=None, pkg_list=None, pkg=None):
@@ -91,11 +91,22 @@ else:
     with open("/tmp/packages.json", "r") as applist:
         app_list = load(applist)
 
+# start the prompt
+#
+result = prompt.main()
+
 # Install softwares based on the initial selection
 # perfomed with a prompt
-if selection:
-    for i in selection:
+if result[0]:
+    for i in result[0]:
         rvstall(install=True, pkg_list=i)
+
+# Install dots conditionally
+if result[1]:
+    print("Dotfiles will be installed.")
+    dots.main()
+else:
+    print("Dotfiles won't be installed.")
 
 # Removes all the packages under remove-list in packages.json
 # It's to be used to remove unneeded packages
@@ -106,10 +117,6 @@ rvstall(remove=True, pkg_list="remove-list")
 options = ["multimedia", "utilities", "user"]
 for i in options:
     rvstall(install=True, pkg_list=i)
-
-# Install dotfiles
-print("Installing dotfiles")
-dots.main()
 
 # Error check message
 print("Check error.txt for any errors, before logging into ur system")
